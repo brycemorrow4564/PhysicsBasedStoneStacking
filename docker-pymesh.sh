@@ -5,7 +5,9 @@
 
 docker run -i -t --mount type=bind,src=/Users/ALEX/Documents/RoboticsFinal/Rocks,dst=/write_rocks pymesh/pymesh
 
-#Once we do this, we enter the following command into python 
+#Once we do this, we execute the following in the container 
+
+# python
 # >>> import subprocess 
 # >>> subprocess.check_output(['python', '../write_rocks/RockMeshToSingleRockMeshes.py])
 

@@ -36,5 +36,9 @@ for raw_rock_fname in single_raw_rock_files:
     #    object into pyBullet.  
     trimesh.exchange.urdf.export_urdf(mesh, rock_urdf_dirpath)
 
-print("Finished VHACD and .obj -> .urdf conversion!")
+print('''
+Finished 
+1. VHACD
+2. .obj -> .urdf conversion!
+''')
 
