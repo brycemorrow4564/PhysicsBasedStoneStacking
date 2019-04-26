@@ -1,5 +1,6 @@
 import trimesh 
 import shutil
+import scipy 
 import os 
 
 base_path = '/home/user/write_rocks'
@@ -24,6 +25,11 @@ for raw_rock_fname in single_raw_rock_files:
     mesh_kwargs = trimesh.exchange.wavefront.load_wavefront(raw_rock_file)
     # Construct a mesh based on the file definition 
     mesh = trimesh.base.Trimesh(**mesh_kwargs[0])
+
+    # Transform the mesh so that the center of mass is located at (0,0,0)
+    # vertices = mesh.vertices
+    # hull = scipy.spatial.ConvexHull(vertices)
+
     # Create a directory where we will write the updated rock files
     rock_urdf_dirname = raw_rock_fname.split(".")[0]
     rock_urdf_dirpath = f'{write_single_rocks_path}/{rock_urdf_dirname}'
